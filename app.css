@@ -1,23 +1,6 @@
-.navBar {
-  display: flex;
-  justify-content: space-around;
-  border: 1px solid black;
-}
-
-ul {
-  display: flex;
-  align-items: center;
-}
-
-li {
-  list-style: none;
-  margin: 10px;
-}
-
-.logo {
-  width: 8%;
-  height: 8%;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 img {
   max-width: 100%;
@@ -46,4 +29,8 @@ img {
   width: 90%;
   margin: 10px;
   height: 50%;
+}
+
+.footer {
+  border: 1px solid black;
 }
