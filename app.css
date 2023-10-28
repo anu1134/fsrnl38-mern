@@ -6,13 +6,30 @@ img {
   max-width: 100%;
 }
 
+.dummy {
+  background-color: red;
+}
+
 .restaurant-card {
   display: flex;
   flex-direction: column;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 350px;
   border: 1px solid black;
   margin: 10px;
+  padding: 16px;
+}
+
+.shimmer-card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 300px;
+  height: 350px;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 16px;
+  background-color: lightgray;
 }
 
 .restaurant-details {

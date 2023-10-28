@@ -1,8 +1,6 @@
 import { CDN_IMG_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
-  console.log("props", props);
-
   // Object destructuring
   const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } =
     props.details;
@@ -10,8 +8,11 @@ const RestaurantCard = (props) => {
   // template literals
 
   return (
-    <div className="restaurant-card">
-      <img src={`${CDN_IMG_URL}${cloudinaryImageId}`}></img>
+    <div className="restaurant-card bg-gray-100 rounded-lg">
+      <img
+        className="rounded-lg"
+        src={`${CDN_IMG_URL}${cloudinaryImageId}`}
+      ></img>
       <div className="restaurant-details">
         <div>
           <h2>{name}</h2>
@@ -19,7 +20,7 @@ const RestaurantCard = (props) => {
         </div>
         <div>
           <h3>{avgRating}</h3>
-          <h3>{costForTwo / 100}</h3>
+          <h3>{costForTwo}</h3>
         </div>
       </div>
     </div>
