@@ -1,4 +1,5 @@
 import { useOnline } from "../utils/useOnline";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const onlineStatus = useOnline();
@@ -11,9 +12,15 @@ const Header = () => {
 
       <ul className="flex items-center">
         <li>OnlineStatus: {onlineStatus ? "🟢" : "🔴"}</li>
-        <li className="list-none m-2">Home</li>
-        <li className="list-none m-2">About Us</li>
-        <li className="list-none m-2">Contact Us</li>
+        <li className="list-none m-2">
+          <Link to="/">Home</Link>
+        </li>
+        <li className="list-none m-2">
+          <Link to="/about">AboutUs</Link>
+        </li>
+        <li className="list-none m-2">
+          <Link to="/contact">ContactUs</Link>
+        </li>
       </ul>
     </div>
   );

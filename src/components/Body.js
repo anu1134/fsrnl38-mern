@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import TopRatedRestaurants from "./TopRatedRestaurants";
 import Shimmer from "./Shimmer";
 import { useOnline } from "../utils/useOnline";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
@@ -90,10 +91,12 @@ const Body = () => {
       ) : (
         <div className="restaurant-cards">
           {filteredRestaurants.map((restaurant) => (
-            <RestaurantCard
-              key={restaurant.info.id}
-              details={restaurant.info}
-            />
+            <Link to={`/restaurant/${restaurant.info.id}`}>
+              <RestaurantCard
+                key={restaurant.info.id}
+                details={restaurant.info}
+              />
+            </Link>
           ))}
         </div>
       )}
