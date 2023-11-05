@@ -1,8 +1,15 @@
 import { useOnline } from "../utils/useOnline";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useContext } from "react";
+import userContext from "../utils/userContext";
 
 const Header = () => {
   const onlineStatus = useOnline();
+  const cartItems = useSelector((store) => store.cart.items);
+  const loggedInUser = useContext(userContext);
+
+  console.log("logged", loggedInUser);
 
   return (
     <div className="flex justify-around border border-solid border-black">
@@ -21,6 +28,10 @@ const Header = () => {
         <li className="list-none m-2">
           <Link to="/contact">ContactUs</Link>
         </li>
+        <li className="list-none m-2">
+          <Link to="/cart">Cart - {cartItems.length} items</Link>
+        </li>
+        {/* <li className="px-4">{loggedInUser}</li> */}
       </ul>
     </div>
   );

@@ -28,8 +28,6 @@ const HeaderComponent = () => {
   return <h1>Header Component</h1>;
 };
 
-const Headercc = () => <h1>Header Component</h1>;
-
 const root1 = ReactDOM.createRoot(document.getElementById("root"));
 root1.render(<HeaderComponent />);
 

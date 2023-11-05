@@ -10,6 +10,10 @@ import Error from "./src/components/Error";
 import Contact from "./src/components/Contact";
 import Profile from "./src/components/Profile";
 import RestaurantDetails from "./src/components/RestaurantDetails";
+import { Provider } from "react-redux";
+import appStore from "./src/utils/appStore";
+import userContext from "./src/utils/userContext";
+import { useState } from "react";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -49,12 +53,15 @@ const appRouter = createBrowserRouter([
 ]);
 
 function App() {
+  const [userName, setUserName] = useState("Anshika");
   return (
-    <>
-      <Header />
-      <Outlet />
-      <Footer />
-    </>
+    <Provider store={appStore}>
+      <userContext.Provider>
+        <Header />
+        <Outlet />
+        <Footer />
+      </userContext.Provider>
+    </Provider>
   );
 }
 

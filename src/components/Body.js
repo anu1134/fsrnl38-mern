@@ -4,11 +4,14 @@ import TopRatedRestaurants from "./TopRatedRestaurants";
 import Shimmer from "./Shimmer";
 import { useOnline } from "../utils/useOnline";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import userContext from "../utils/userContext";
 
 const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  //const { loggedInuser, setUserName } = useContext(userContext);
 
   useEffect(() => {
     fetchData();
@@ -83,6 +86,11 @@ const Body = () => {
             topRatedRestaurants={filterTopRatedRestaurants}
             filteredRestaurants={filteredRestaurants}
           />
+
+          {/* <input
+            className="border border-black"
+            onChange={(e) => setUserName(e.target.value)}
+          ></input> */}
         </div>
       </div>
 
