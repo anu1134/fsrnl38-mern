@@ -14,6 +14,7 @@ import { Provider } from "react-redux";
 import appStore from "./src/utils/appStore";
 import userContext from "./src/utils/userContext";
 import { useState } from "react";
+import { CartProvider } from "./src/utils/cartContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -54,12 +55,15 @@ const appRouter = createBrowserRouter([
 
 function App() {
   const [userName, setUserName] = useState("Anshika");
+
   return (
     <Provider store={appStore}>
       <userContext.Provider>
-        <Header />
-        <Outlet />
-        <Footer />
+        <CartProvider>
+          <Header />
+          <Outlet />
+          <Footer />
+        </CartProvider>
       </userContext.Provider>
     </Provider>
   );

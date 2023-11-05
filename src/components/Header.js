@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useContext } from "react";
 import userContext from "../utils/userContext";
+import { CartContext } from "../utils/cartContext";
 
 const Header = () => {
   const onlineStatus = useOnline();
   const cartItems = useSelector((store) => store.cart.items);
   const loggedInUser = useContext(userContext);
+  const { cart } = useContext(CartContext);
+  console.log("cart", cart);
 
   console.log("logged", loggedInUser);
 
@@ -29,7 +32,7 @@ const Header = () => {
           <Link to="/contact">ContactUs</Link>
         </li>
         <li className="list-none m-2">
-          <Link to="/cart">Cart - {cartItems.length} items</Link>
+          <Link to="/cart">Cart - {cart.length} items</Link>
         </li>
         {/* <li className="px-4">{loggedInUser}</li> */}
       </ul>

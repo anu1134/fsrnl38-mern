@@ -7,11 +7,12 @@ import { useDispatch } from "react-redux";
 //import { addItem } from "../utils/cartSlice";
 import { useContext } from "react";
 import userContext from "../utils/userContext";
+import { CartContext } from "../utils/cartContext";
 
 const RestaurantDetails = () => {
   const { id } = useParams();
 
-  const { addItem } = useContext(userContext);
+  const { addToCart } = useContext(CartContext);
 
   const menu_data = useRestaurantMenu(id);
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ const RestaurantDetails = () => {
   console.log("itemsCards", itemCards);
 
   function handleAddItem(item) {
-    addItem(item);
+    addToCart(item);
 
     //dispatch(addItem(item));
   }
