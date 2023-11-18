@@ -4,7 +4,7 @@ import userContext from "../utils/userContext";
 
 const RestaurantCard = (props) => {
   // Object destructuring
-  const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } =
+  const { name, cuisines, avgRating, costForTwo, cloudinaryImageID } =
     props.details;
 
   console.log("user context", userContext);
@@ -19,7 +19,7 @@ const RestaurantCard = (props) => {
     <div className="restaurant-card bg-gray-100 rounded-lg">
       <img
         className="rounded-lg"
-        src={`${CDN_IMG_URL}${cloudinaryImageId}`}
+        src={`${CDN_IMG_URL}${cloudinaryImageID}`}
       ></img>
       <div className="restaurant-details">
         <div>

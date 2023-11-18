@@ -2,13 +2,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const routess = require("./Routes/restaurants.routes");
+const usersRoutes = require("./Routes/users.routes");
 
 const app = express();
 
 app.use(bodyParser.json());
 
 mongoose.connect(
-  "mongodb+srv://geeksforgeeks:geeks123@cluster0.vgqde5w.mongodb.net/"
+  "mongodb+srv://geeksforgeeks:geeks123@cluster0.r8udfmn.mongodb.net/"
 );
 
 const db = mongoose.connection;
@@ -30,3 +31,4 @@ app.get("/", (req, res) => {
 });
 
 routess(app);
+usersRoutes(app);

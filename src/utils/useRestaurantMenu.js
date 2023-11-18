@@ -1,4 +1,4 @@
-import { MENU_API } from "./constants";
+import { REST_MENU_API } from "./constants";
 import { useEffect, useState } from "react";
 
 const useRestaurantMenu = (id) => {
@@ -9,7 +9,7 @@ const useRestaurantMenu = (id) => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(MENU_API + id);
+    const data = await fetch(REST_MENU_API + id);
     const json = await data.json();
 
     setMenuData(json);
