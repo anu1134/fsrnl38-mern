@@ -18,7 +18,7 @@ function Login(props) {
   function login() {
     console.log("email", email);
     console.log("password", password);
-    fetch("http://localhost:5000/api/login", {
+    fetch("https://api-deployment-b12m.onrender.com/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ function Login(props) {
   }
 
   function register() {
-    fetch("http://localhost:5000/api/register", {
+    fetch("https://api-deployment-b12m.onrender.com/api/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
