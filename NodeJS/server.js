@@ -3,8 +3,11 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const routess = require("./Routes/restaurants.routes");
 const usersRoutes = require("./Routes/users.routes");
+const cors = require("cors");
 
 const app = express();
+
+app.use(cors());
 
 // Built in middlewares
 app.use(bodyParser.json());

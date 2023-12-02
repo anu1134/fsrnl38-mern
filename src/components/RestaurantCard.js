@@ -9,9 +9,9 @@ const RestaurantCard = (props) => {
 
   console.log("user context", userContext);
 
-  const loggedInUser = useContext(userContext);
+  const currentUser = useContext(userContext);
 
-  console.log("context", loggedInUser);
+  console.log("context", currentUser);
 
   // template literals
 

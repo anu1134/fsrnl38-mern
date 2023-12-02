@@ -58,7 +58,7 @@ function App() {
 
   return (
     <Provider store={appStore}>
-      <userContext.Provider>
+      <userContext.Provider value={{ currentUser: userName, setUserName }}>
         <CartProvider>
           <Header />
           <Outlet />
